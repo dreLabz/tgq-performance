@@ -5,10 +5,10 @@ export default function Footer() {
     <footer className="bg-gray-800 py-10 px-6 md:px-12">
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-6">
         <Image
-          src="/tgq_logo.png"
+          src="/brand/tgq-logo.png"
           alt="TGQ Performance"
           width={80}
-          height={28}
+          height={79}
           className="w-16 h-auto opacity-60"
         />
 

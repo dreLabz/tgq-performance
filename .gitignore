@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# video — hosted externally, never committed.
+# Recursive (**) on purpose: the old root-only patterns missed instruction/
+# and shorts/ entirely. The hero loop is the one exception, un-ignored below,
+# because it must load instantly and is small enough to ship.
+/public/video/**/*.mov
+/public/video/**/*.mp4
+!/public/video/hero-loop.mp4
+
+# working reference material — mood boards, client raws, comps (never served or committed)
+/_reference/

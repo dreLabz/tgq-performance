@@ -21,12 +21,12 @@ export default function Navbar() {
     >
       <a href="#" className="block">
         <Image
-          src="/tgq_logo.png"
+          src="/brand/tgq-logo.png"
           alt="TGQ Performance"
           width={120}
-          height={40}
+          height={118}
           priority
-          className="w-24 md:w-32 h-auto"
+          className="h-10 md:h-12 w-auto"
         />
       </a>
       <Button href="#contact" variant="outline" className="text-xs px-6 py-2">

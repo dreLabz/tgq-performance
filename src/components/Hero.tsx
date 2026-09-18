@@ -7,17 +7,33 @@ import Button from "./Button";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 text-center overflow-hidden">
-      {/* Background image */}
+      {/* Poster frame — sits under the video. Also the still shown when the
+          viewer prefers reduced motion, or before the loop has buffered. */}
       <Image
-        src="/hero-bg.jpg"
+        src="/images/hero/hero-poster.jpg"
         alt=""
         fill
         priority
         className="object-cover"
       />
 
+      {/* Background loop. Muted + playsInline are both required for autoplay
+          to be allowed on mobile Safari and Chrome. */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/images/hero/hero-poster.jpg"
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
+      >
+        <source src="/video/hero-loop.mp4" type="video/mp4" />
+      </video>
+
       {/* Dark overlay (adjust opacity as needed) */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/50" />
 
       {/* Vignette */}
       <div
@@ -51,10 +67,10 @@ export default function Hero() {
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
           >
             <Image
-              src="/tgq_logo.png"
+              src="/brand/tgq-logo.png"
               alt="TGQ Performance"
               width={300}
-              height={100}
+              height={295}
               priority
               className="w-48 md:w-64 lg:w-80 h-auto drop-shadow-[0_0_25px_rgba(255,255,255,0.15)]"
             />
