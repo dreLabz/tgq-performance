@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Inter } from "next/font/google";
+import { Barlow_Condensed, Caveat, Inter } from "next/font/google";
 import "./globals.css";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
   weight: ["600", "700", "800"],
   variable: "--font-barlow-condensed",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  variable: "--font-caveat",
 });
 
 const inter = Inter({
@@ -27,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${barlowCondensed.variable} ${inter.variable} h-full antialiased`}
+      className={`${barlowCondensed.variable} ${caveat.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

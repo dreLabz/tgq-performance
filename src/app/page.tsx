@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import ChooseYourGame from "@/components/ChooseYourGame";
+import MeetTheCoaches from "@/components/MeetTheCoaches";
 import Instruction from "@/components/Instruction";
 import Shorts from "@/components/Shorts";
 import Contact from "@/components/Contact";
@@ -15,6 +16,7 @@ export default function Home() {
         <Hero />
         <About />
         <ChooseYourGame />
+        <MeetTheCoaches />
         <Instruction />
         <Shorts />
         <Contact />
