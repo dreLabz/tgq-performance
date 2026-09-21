@@ -1,22 +1,69 @@
 @import "tailwindcss";
 
-@theme inline {
+/* Colours use `static`, not `inline`, on purpose.
+   With `inline`, Tailwind bakes the literal hex into each utility
+   (`.bg-accent{background-color:#c8102e}`) and then tree-shakes the variable
+   out of :root entirely — so `var(--color-accent)` from hand-written CSS or an
+   inline style silently resolved to nothing. `static` forces emission. */
+@theme static {
   --color-black: #050505;
+  --color-ink: #0B0B0B;
   --color-white: #F5F5F5;
   --color-accent: #C8102E;
+
+  /* 300/500/700/900 were previously falling through to stock Tailwind gray,
+     which is blue-tinted (oklch hue 264) and reads wrong against #050505. */
+  --color-gray-900: #111111;
   --color-gray-800: #1A1A1A;
+  --color-gray-700: #222222;
   --color-gray-600: #2A2A2A;
+  --color-gray-500: #4A4A4A;
   --color-gray-400: #999999;
+  --color-gray-300: #C4C4C4;
+
+  --tracking-display: 0.01em;
+  --tracking-label: 0.15em;
+  --tracking-rail: 0.28em;
+}
+
+/* Fonts stay `inline`: next/font supplies a hashed family name through these
+   variables, so inlining avoids a var pointing at another var. */
+@theme inline {
   --font-heading: var(--font-barlow-condensed);
   --font-body: var(--font-inter);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-body {
-  background: var(--color-black);
-  color: var(--color-white);
-  font-family: var(--font-body), sans-serif;
+  body {
+    background: var(--color-black);
+    color: var(--color-white);
+    font-family: var(--font-body), sans-serif;
+  }
+
+  /* The navbar is fixed and ~84px tall; without this every in-page anchor
+     lands underneath it. */
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-white);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }

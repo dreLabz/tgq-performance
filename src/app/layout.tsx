@@ -14,9 +14,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "TGQ Performance | Elite Football Training",
+  title: "TGQ Performance | Elite Football + Softball Training",
   description:
-    "TGQ Performance. Time Grind Quality. Elite football training for all ages, from youth development to the professional level.",
+    "TGQ Performance. Time Grind Quality. Elite football and softball development for athletes at every level — in person and virtual coaching.",
 };
 
 export default function RootLayout({
