@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
-import SectionReveal from "./SectionReveal";
+import SectionReveal from "../SectionReveal";
 import VideoCard from "./VideoCard";
-import VideoLightbox from "./VideoLightbox";
+import VideoLightbox from "../VideoLightbox";
 import { shortFormVideos, type VideoItem } from "@/lib/videos";
 
 export default function Shorts() {

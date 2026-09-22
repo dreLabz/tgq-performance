@@ -1,6 +1,6 @@
 "use client";
 
-import SectionReveal from "./SectionReveal";
+import SectionReveal from "../SectionReveal";
 
 const credentials = [
   {

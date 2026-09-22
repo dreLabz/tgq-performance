@@ -4,7 +4,12 @@ export type IconName =
   | "softball"
   | "whistle"
   | "shield"
-  | "trophy";
+  | "trophy"
+  | "clock"
+  | "bars"
+  | "diamond"
+  | "people"
+  | "infinity";
 
 interface Props {
   name: IconName;
@@ -46,6 +51,36 @@ const PATHS: Record<IconName, React.ReactNode> = {
     <>
       <path d="M12 2.5 4.5 5.2v6.4c0 4.6 3.2 8.6 7.5 9.9 4.3-1.3 7.5-5.3 7.5-9.9V5.2L12 2.5Z" />
       <path d="M9.5 9.5h1.8l1.4 3 1.4-3h1.8" />
+    </>
+  ),
+  clock: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5.2l3.4 2" />
+    </>
+  ),
+  bars: (
+    <>
+      <path d="M5 20V13M12 20V7M19 20V10" />
+    </>
+  ),
+  diamond: (
+    <>
+      <path d="M6 4h12l3.2 5L12 20.5 2.8 9 6 4Z" />
+      <path d="M2.8 9h18.4M9 4l-1.6 5L12 20.5 16.6 9 15 4" />
+    </>
+  ),
+  people: (
+    <>
+      <circle cx="9" cy="8.5" r="2.8" />
+      <path d="M3.5 19.5a5.5 5.5 0 0 1 11 0" />
+      <path d="M16 6.2a2.8 2.8 0 0 1 0 5.4M17.5 14.6a5.5 5.5 0 0 1 3 4.9" />
+    </>
+  ),
+  infinity: (
+    <>
+      <path d="M9.2 12c0 2-1.4 3.6-3.1 3.6S3 14 3 12s1.4-3.6 3.1-3.6c2.6 0 4 3.6 5.9 3.6s3.3-1.6 3.3-3.6S13.9 8.4 12.2 8.4" />
+      <path d="M14.8 12c0-2 1.4-3.6 3.1-3.6S21 10 21 12s-1.4 3.6-3.1 3.6c-2.6 0-4-3.6-5.9-3.6" />
     </>
   ),
   trophy: (

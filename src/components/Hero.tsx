@@ -1,148 +1,136 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Button from "./Button";
+import MediaSlot from "./MediaSlot";
+import { heroContent } from "@/lib/site";
+import { sports } from "@/lib/sports";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 text-center overflow-hidden">
-      {/* Poster frame — sits under the video. Also the still shown when the
-          viewer prefers reduced motion, or before the loop has buffered. */}
-      <Image
-        src="/images/hero/hero-poster.jpg"
-        alt=""
-        fill
-        priority
-        className="object-cover"
-      />
+    <section
+      id="home"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center"
+    >
+      {/* Split background: football left, softball right. Stacks to a single
+          column below md, where two half-width frames are unreadable. */}
+      <div className="absolute inset-0 -z-10 grid grid-cols-1 md:grid-cols-2">
+        {sports.map((sport) => (
+          <div key={sport.id} className="relative">
+            <MediaSlot
+              media={sport.media}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority={sport.id === "football"}
+              className="absolute inset-0"
+            />
+          </div>
+        ))}
+      </div>
 
-      {/* Background loop. Muted + playsInline are both required for autoplay
-          to be allowed on mobile Safari and Chrome. */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        poster="/images/hero/hero-poster.jpg"
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
-      >
-        <source src="/video/hero-loop.mp4" type="video/mp4" />
-      </video>
-
-      {/* Dark overlay (adjust opacity as needed) */}
-      <div className="absolute inset-0 bg-black/50" />
-
-      {/* Vignette */}
+      <div className="absolute inset-0 -z-10 bg-black/60" />
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%)",
+            "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.75) 100%)",
         }}
       />
 
-      {/* ===== CONTENT ===== */}
+      {/* Edge labels */}
+      {sports.map((sport, i) => (
+        <span
+          key={sport.id}
+          aria-hidden="true"
+          className={`absolute top-28 hidden font-heading font-semibold uppercase tracking-rail text-[0.6875rem] text-gray-300 lg:block ${
+            i === 0 ? "left-8 text-left" : "right-8 text-right"
+          }`}
+        >
+          {sport.heroLabel}
+        </span>
+      ))}
+
       <div className="relative z-10 flex flex-col items-center">
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.6, y: -30 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mb-8"
-        >
-          {/* Glow behind logo */}
-          <motion.div
-            className="absolute inset-0 blur-2xl rounded-full"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 0.6, 0.3] }}
-            transition={{ duration: 2, delay: 0.8, ease: "easeOut" }}
-            style={{ background: "radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%)" }}
-          />
-          {/* Floating idle animation */}
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-          >
-            <Image
-              src="/brand/tgq-logo.png"
-              alt="TGQ Performance"
-              width={300}
-              height={295}
-              priority
-              className="w-48 md:w-64 lg:w-80 h-auto drop-shadow-[0_0_25px_rgba(255,255,255,0.15)]"
-            />
-          </motion.div>
-        </motion.div>
-
-        {/* Tagline Line 1 */}
-        <motion.h1
-          className="font-heading font-extrabold uppercase tracking-[0.15em] text-5xl md:text-6xl lg:text-8xl text-white leading-none"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-        >
-          Elevate Your Game
-        </motion.h1>
-
-        {/* Tagline Line 2 */}
         <motion.p
-          className="font-heading font-semibold uppercase tracking-[0.15em] text-2xl md:text-3xl lg:text-4xl text-gray-400 mt-3"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-        >
-          Train Like a Pro
-        </motion.p>
-
-        {/* Subtitle */}
-        <motion.p
-          className="font-body text-gray-400 text-base md:text-lg max-w-md mt-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.65, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="font-heading font-bold uppercase tracking-rail text-xs text-gray-300 md:text-sm"
         >
-          Elite football training for all ages, from youth development to the
-          professional level.
+          {heroContent.eyebrow}
         </motion.p>
 
-        {/* CTA */}
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+          className="mt-4 font-heading font-extrabold uppercase tracking-display text-white text-[clamp(3rem,10vw,8rem)] leading-[0.88]"
+        >
+          {heroContent.title}
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
+          className="mt-4 font-heading font-semibold uppercase tracking-label text-gray-300 text-[clamp(1rem,2.4vw,1.75rem)]"
+        >
+          {heroContent.subtitle}
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35, ease: "easeOut" }}
+          className="mt-4 max-w-2xl font-body text-sm text-gray-300 md:text-base"
+        >
+          {heroContent.tagline}
+        </motion.p>
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
-          className="mt-10"
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-10 flex flex-col gap-4 sm:flex-row"
         >
-          <Button href="#contact">Start Training</Button>
+          <Button href="#choose" variant="accent" size="lg" arrow>
+            Football Training
+          </Button>
+          <Button href="#choose" variant="outline" size="lg" arrow>
+            Softball Training
+          </Button>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.65 }}
+          className="mt-10 font-heading font-semibold uppercase tracking-rail text-xs text-gray-300"
+        >
+          {heroContent.closing}
+        </motion.p>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+      <motion.a
+        href="#foundation"
+        aria-label="Scroll to next section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.5 }}
+        transition={{ delay: 1, duration: 0.5 }}
+        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-gray-300 hover:text-white"
       >
-        <motion.div
+        <motion.svg
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            className="text-gray-400"
-          >
-            <path d="M6 9l6 6 6-6" />
-          </svg>
-        </motion.div>
-      </motion.div>
+          <path d="M6 9l6 6 6-6" />
+        </motion.svg>
+      </motion.a>
     </section>
   );
 }

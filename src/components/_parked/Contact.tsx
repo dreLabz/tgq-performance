@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import SectionReveal from "./SectionReveal";
-import Button from "./Button";
+import SectionReveal from "../SectionReveal";
+import Button from "../Button";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
