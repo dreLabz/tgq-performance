@@ -1,18 +1,18 @@
 interface Props {
-  /** Small red caps line above the title. */
+  /** Small caps line above the title. */
   eyebrow?: string;
   title: string;
   subtitle?: string;
   align?: "left" | "center";
   /** The hero is the only h1 on the page. */
   as?: "h1" | "h2";
-  /** The short red rule. Off by default — the comps use it sparingly. */
+  /** The short rule. Off by default — the comps use it sparingly. */
   rule?: boolean;
   className?: string;
 }
 
 /**
- * Replaces the h2 + accent-rule block that was copy-pasted verbatim into
+ * Replaces the h2 + rule block that was copy-pasted verbatim into
  * About, Instruction, Shorts and Contact.
  */
 export default function SectionHeading({
@@ -29,7 +29,7 @@ export default function SectionHeading({
   return (
     <header className={`${centered ? "text-center" : ""} ${className}`}>
       {eyebrow && (
-        <p className="font-heading font-bold uppercase tracking-rail text-xs text-accent mb-3">
+        <p className="font-heading font-bold uppercase tracking-rail text-xs text-gray-300 mb-3">
           {eyebrow}
         </p>
       )}
@@ -45,7 +45,7 @@ export default function SectionHeading({
       )}
 
       {rule && (
-        <div className={`mt-6 h-1 w-16 bg-accent ${centered ? "mx-auto" : ""}`} />
+        <div className={`mt-6 h-1 w-16 bg-white ${centered ? "mx-auto" : ""}`} />
       )}
     </header>
   );

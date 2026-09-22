@@ -100,7 +100,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-10 flex flex-col gap-4 sm:flex-row"
         >
-          <Button href="#choose" variant="accent" size="lg" arrow>
+          <Button href="#choose" variant="primary" size="lg" arrow>
             Football Training
           </Button>
           <Button href="#choose" variant="outline" size="lg" arrow>

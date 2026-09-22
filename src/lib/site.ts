@@ -19,6 +19,30 @@ export const site = {
     { label: "Contact", href: "#contact" },
   ],
   navCta: { label: "Book A Session", href: "#contact" } satisfies Cta,
+  /**
+   * Booking is sport-first: the user picks football or softball before being
+   * routed anywhere. Each href is a placeholder until the real scheduling
+   * links exist (Calendly, TeamSnap, whatever Q and Aeshia use) — swapping
+   * them here is the only change needed.
+   */
+  booking: [
+    {
+      sport: "football" as const,
+      label: "Football",
+      coach: "Coach Q",
+      blurb: "Defensive back development, in person and virtual.",
+      href: "#coaches",
+      ready: false,
+    },
+    {
+      sport: "softball" as const,
+      label: "Softball",
+      coach: "Coach Aeshia",
+      blurb: "Hitting, fielding and pitching development.",
+      href: "#coaches",
+      ready: false,
+    },
+  ],
   socials: [
     { label: "Instagram", href: "https://instagram.com/" },
     { label: "TikTok", href: "https://tiktok.com/" },

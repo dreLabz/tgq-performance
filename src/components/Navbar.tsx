@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import BookingChooser from "./BookingChooser";
 import Button from "./Button";
 import { site } from "@/lib/site";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [booking, setBooking] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -68,7 +70,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-4">
           <Button
-            href={site.navCta.href}
+            onClick={() => setBooking(true)}
             variant="outline"
             size="sm"
             className="hidden sm:inline-flex"
@@ -115,16 +117,20 @@ export default function Navbar() {
           </ul>
 
           <Button
-            href={site.navCta.href}
-            variant="accent"
+            variant="primary"
             size="md"
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              setOpen(false);
+              setBooking(true);
+            }}
             className="mt-10 w-full"
           >
             {site.navCta.label}
           </Button>
         </div>
       )}
+
+      <BookingChooser open={booking} onClose={() => setBooking(false)} />
     </>
   );
 }

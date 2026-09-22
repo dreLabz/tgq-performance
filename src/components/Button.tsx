@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-type Variant = "primary" | "outline" | "accent" | "ghost";
+type Variant = "primary" | "outline" | "ghost";
 type Size = "sm" | "md" | "lg";
 
 interface ButtonProps {
@@ -25,7 +25,6 @@ interface ButtonProps {
 const VARIANTS: Record<Variant, string> = {
   primary: "bg-white text-black hover:bg-gray-300",
   outline: "border-2 border-white text-white hover:bg-white hover:text-black",
-  accent: "bg-accent text-white hover:bg-white hover:text-black",
   ghost: "border border-white/25 text-white hover:border-white hover:bg-white/5",
 };
 
@@ -47,7 +46,7 @@ export default function Button({
 }: ButtonProps) {
   const classes = [
     "inline-flex items-center justify-center gap-3 font-heading font-bold uppercase tracking-label transition-colors cursor-pointer",
-    "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent",
+    "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
     VARIANTS[variant],
     SIZES[size],
     stretch ? "after:absolute after:inset-0 after:content-['']" : "",

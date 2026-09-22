@@ -80,7 +80,7 @@ export default function InActionGrid({ videos }: { videos: ActionVideo[] }) {
                         openerRef.current = e.currentTarget;
                         setActive(playable);
                       }}
-                      className="mt-6 inline-flex w-full items-center justify-center gap-3 border-2 border-white px-6 py-2.5 font-heading text-[0.6875rem] font-bold uppercase tracking-label text-white transition-colors hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent after:absolute after:inset-0 after:content-['']"
+                      className="mt-6 inline-flex w-full items-center justify-center gap-3 border-2 border-white px-6 py-2.5 font-heading text-[0.6875rem] font-bold uppercase tracking-label text-white transition-colors hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white after:absolute after:inset-0 after:content-['']"
                     >
                       {video.cta.label}
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3.5 w-3.5" aria-hidden="true">

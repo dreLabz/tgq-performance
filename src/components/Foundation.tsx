@@ -50,7 +50,7 @@ export default function Foundation() {
                 <h3 className="mt-4 font-heading font-extrabold uppercase tracking-display text-white text-4xl md:text-5xl">
                   {pillar.title}
                 </h3>
-                <div className="mt-3 h-1 w-12 bg-accent" />
+                <div className="mt-3 h-1 w-12 bg-white" />
 
                 <p className="mt-4 font-body text-sm leading-relaxed text-gray-300">
                   {pillar.lines.map((line) => (

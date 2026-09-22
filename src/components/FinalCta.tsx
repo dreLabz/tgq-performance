@@ -33,7 +33,7 @@ export default function FinalCta() {
           />
 
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-            <Button href="#choose" variant="accent" size="lg" arrow>
+            <Button href="#choose" variant="primary" size="lg" arrow>
               Football
             </Button>
             <Button href="#choose" variant="outline" size="lg" arrow>

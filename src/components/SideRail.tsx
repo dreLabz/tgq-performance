@@ -25,7 +25,7 @@ export default function SideRail({ items, side, className = "" }: Props) {
         ))}
       </ul>
       <div
-        className={`mt-3 h-px w-10 bg-accent ${isLeft ? "" : "ml-auto"}`}
+        className={`mt-3 h-px w-10 bg-white ${isLeft ? "" : "ml-auto"}`}
       />
     </div>
   );
