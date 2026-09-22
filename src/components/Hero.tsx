@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Button from "./Button";
 import MediaSlot from "./MediaSlot";
-import { heroContent } from "@/lib/site";
+import { heroContent, site } from "@/lib/site";
 import { sports } from "@/lib/sports";
 
 export default function Hero() {
@@ -50,10 +51,26 @@ export default function Hero() {
       ))}
 
       <div className="relative z-10 flex flex-col items-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85, y: -16 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-6 md:mb-8"
+        >
+          <Image
+            src={site.brand.logo}
+            alt={site.brand.name}
+            width={320}
+            height={315}
+            priority
+            className="h-24 w-auto drop-shadow-[0_0_30px_rgba(0,0,0,0.6)] md:h-32 lg:h-40"
+          />
+        </motion.div>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
           className="font-heading font-bold uppercase tracking-rail text-xs text-gray-300 md:text-sm"
         >
           {heroContent.eyebrow}
@@ -62,7 +79,7 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+          transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
           className="mt-4 font-heading font-extrabold uppercase tracking-display text-white text-[clamp(3rem,10vw,8rem)] leading-[0.88]"
         >
           {heroContent.title}

@@ -6,6 +6,15 @@ import SectionReveal from "./SectionReveal";
 import SideRail from "./SideRail";
 import { storiesCta, storyCredentials, storyTiles } from "@/lib/stories";
 
+/** Written out in full so Tailwind can see the class names. */
+const SPAN: Record<number, string> = {
+  3: "lg:col-span-3",
+  4: "lg:col-span-4",
+  5: "lg:col-span-5",
+  6: "lg:col-span-6",
+  7: "lg:col-span-7",
+};
+
 export default function WorkSpeaks() {
   return (
     <section id="stories" className="relative py-20 md:py-28">
@@ -48,12 +57,9 @@ export default function WorkSpeaks() {
             <SectionReveal
               key={tile.id}
               delay={(i % 3) * 0.08}
-              className="lg:[grid-column:span_var(--span)/span_var(--span)]"
+              className={SPAN[tile.span] ?? "lg:col-span-4"}
             >
-              <div
-                style={{ ["--span" as string]: tile.span }}
-                className="relative isolate flex h-full min-h-[14rem] flex-col justify-end overflow-hidden border border-gray-600 p-5"
-              >
+              <div className="relative isolate flex h-full min-h-[17rem] flex-col justify-end overflow-hidden border border-gray-600 p-6">
                 {"media" in tile && tile.media && (
                   <>
                     <MediaSlot
@@ -67,7 +73,7 @@ export default function WorkSpeaks() {
 
                 {tile.kind === "quote" && (
                   <blockquote>
-                    <p className="font-heading font-semibold uppercase tracking-label text-sm leading-relaxed text-white">
+                    <p className="font-heading font-semibold uppercase tracking-[0.05em] text-sm leading-[1.7] text-white">
                       &ldquo;{tile.quote}&rdquo;
                     </p>
                     <footer className="mt-3 font-heading font-medium uppercase tracking-rail text-[0.625rem] text-gray-400">

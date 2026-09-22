@@ -10,6 +10,9 @@ export interface StoryCredential {
 /**
  * Collage tiles. Spans are explicit rather than masonry — the comp is a
  * deterministic grid, and a masonry library would fight it.
+ *
+ * Spans are out of 12 and are laid out to fill rows exactly:
+ *   5 + 4 + 3  |  4 + 5 + 3  |  5 + 7
  */
 export type StoryTile =
   | { kind: "photo"; id: string; span: number; media: MediaRef; script?: string }
@@ -45,7 +48,7 @@ export const storyTiles: StoryTile[] = [
   {
     kind: "quote",
     id: "college-db",
-    span: 4,
+    span: 5,
     quote:
       "Coach Q helped me see the game different. My confidence took another level.",
     attribution: "College DB",
@@ -63,7 +66,7 @@ export const storyTiles: StoryTile[] = [
   {
     kind: "photo",
     id: "discipline",
-    span: 4,
+    span: 3,
     media: { src: null, alt: "", label: "Back of TGQ tee — Discipline Builds Freedom" },
   },
   {
@@ -77,7 +80,7 @@ export const storyTiles: StoryTile[] = [
   {
     kind: "quote",
     id: "parent",
-    span: 4,
+    span: 5,
     quote:
       "The best investment we've made. TGQ developed our son on and off the field.",
     attribution: "Parent",
@@ -86,7 +89,7 @@ export const storyTiles: StoryTile[] = [
   {
     kind: "logos",
     id: "commitments",
-    span: 4,
+    span: 3,
     heading: "College Commitments",
     logos: [],
     footnote: "And more...",
@@ -94,7 +97,7 @@ export const storyTiles: StoryTile[] = [
   {
     kind: "quote",
     id: "college-athlete",
-    span: 4,
+    span: 5,
     quote:
       "TGQ taught me how to prepare, compete and handle adversity. That's real development.",
     attribution: "College Athlete",
@@ -103,7 +106,7 @@ export const storyTiles: StoryTile[] = [
   {
     kind: "photo",
     id: "same-standard",
-    span: 4,
+    span: 7,
     media: { src: null, alt: "", label: "Both coaches, backs to camera, TGQ gear" },
     script: "Same Standard. Different Game.",
   },
