@@ -67,19 +67,10 @@ export default function Hero() {
           />
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-          className="font-heading font-bold uppercase tracking-rail text-xs text-gray-300 md:text-sm"
-        >
-          {heroContent.eyebrow}
-        </motion.p>
-
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
+          transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
           className="mt-4 font-heading font-extrabold uppercase tracking-display text-white text-[clamp(3rem,10vw,8rem)] leading-[0.88]"
         >
           {heroContent.title}

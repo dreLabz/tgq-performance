@@ -29,7 +29,6 @@ export const site = {
 };
 
 export const heroContent = {
-  eyebrow: "TGQ Performance",
   title: "Elevate Your Game",
   subtitle: "Elite Football + Softball Development",
   tagline:
