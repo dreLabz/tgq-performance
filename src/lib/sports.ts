@@ -27,10 +27,10 @@ export const sports: Sport[] = [
     cta: { label: "Explore Football", href: "#coaches" },
     railWords: ["Detail", "Discipline", "Dominate"],
     media: {
-      src: null,
+      // Portrait source in a landscape pane; the action sits low in frame.
+      src: "/images/sports/football.jpg",
       alt: "",
-      focus: "60% 40%",
-      label: "Football — coach mirroring a DB, TGQ banner behind",
+      focus: "50% 62%",
     },
   },
   {

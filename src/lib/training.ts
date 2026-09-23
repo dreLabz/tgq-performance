@@ -21,9 +21,10 @@ export const trainingOptions: TrainingOption[] = [
     tagsRight: ["Football", "Softball", "One Standard"],
     cta: { label: "Learn More", href: "#contact" },
     media: {
-      src: null,
+      src: "/images/training/group.jpg",
       alt: "",
-      label: "Split frame — football and softball group work side by side",
+      // Athletes' faces sit in the upper-middle of a portrait source.
+      focus: "50% 44%",
     },
   },
   {
@@ -35,9 +36,9 @@ export const trainingOptions: TrainingOption[] = [
     tagsRight: ["Your Game", "Our Focus"],
     cta: { label: "Learn More", href: "#contact" },
     media: {
-      src: null,
+      src: "/images/training/private.jpg",
       alt: "",
-      label: "Coach one-on-one with an athlete, close crop",
+      focus: "55% 50%",
     },
   },
   {

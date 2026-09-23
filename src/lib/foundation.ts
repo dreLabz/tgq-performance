@@ -17,9 +17,9 @@ export const pillars: Pillar[] = [
     title: "Time",
     lines: ["Development takes time.", "Trust the process."],
     media: {
-      src: null,
+      src: "/images/foundation/time.jpg",
       alt: "",
-      label: "Football — athlete driving out of a low start",
+      focus: "55% 45%",
     },
   },
   {

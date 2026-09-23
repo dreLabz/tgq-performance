@@ -53,10 +53,9 @@ export const coaches: Coach[] = [
     cta: { label: "Meet Coach Q", href: "#contact" },
     railWords: ["Football", "Builds", "Discipline"],
     media: {
-      src: null,
+      src: "/images/coaches/coach-q.jpg",
       alt: "Coach Q",
-      focus: "50% 25%",
-      label: "Coach Q portrait — field, helmeted athlete in foreground",
+      focus: "50% 38%",
     },
   },
   {
