@@ -67,7 +67,7 @@ export default function WorkSpeaks() {
                       sizes="(max-width: 1024px) 50vw, 33vw"
                       className="absolute inset-0 -z-10"
                     />
-                    <div className="absolute inset-0 -z-10 bg-black/60" />
+                    <div className="absolute inset-0 -z-10 bg-black/50" />
                   </>
                 )}
 
@@ -104,7 +104,7 @@ export default function WorkSpeaks() {
                             key={n}
                             media={logo}
                             sizes="80px"
-                            className="h-12 w-12"
+                            className="relative h-12 w-12"
                           />
                         ))}
                       </div>

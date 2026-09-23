@@ -23,7 +23,7 @@ export default function FinalCta() {
           </div>
         ))}
       </div>
-      <div className="absolute inset-0 -z-10 bg-black/75" />
+      <div className="absolute inset-0 -z-10 bg-black/60" />
 
       <div className="mx-auto max-w-5xl px-6 text-center">
         <SectionReveal>

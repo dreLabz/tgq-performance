@@ -49,7 +49,7 @@ export default function TrainWithTGQ() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="absolute inset-0 -z-10 transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/70 to-black/30" />
+                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/95 via-black/45 to-black/15" />
 
                 <div className="flex justify-between gap-4 p-6">
                   <TagColumn items={option.tagsLeft} side="left" />
@@ -87,7 +87,7 @@ export default function TrainWithTGQ() {
               sizes="100vw"
               className="absolute inset-0 -z-10"
             />
-            <div className="absolute inset-0 -z-10 bg-black/70" />
+            <div className="absolute inset-0 -z-10 bg-black/55" />
 
             <div>
               <h3 className="font-heading font-extrabold uppercase tracking-display text-white text-2xl md:text-3xl">

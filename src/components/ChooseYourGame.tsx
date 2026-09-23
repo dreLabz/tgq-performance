@@ -37,7 +37,7 @@ export default function ChooseYourGame() {
 
               {/* Scrim. The photography is dark already, but the offering
                   list sits low where the frame is busiest. */}
-              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/55 to-black/15" />
+              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/95 via-black/35 to-black/5" />
 
               <div
                 aria-hidden="true"

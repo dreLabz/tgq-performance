@@ -28,7 +28,7 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="absolute inset-0 -z-10 bg-black/60" />
+      <div className="absolute inset-0 -z-10 bg-black/45" />
       <div
         className="absolute inset-0 -z-10"
         style={{

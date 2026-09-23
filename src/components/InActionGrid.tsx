@@ -43,7 +43,7 @@ export default function InActionGrid({ videos }: { videos: ActionVideo[] }) {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="absolute inset-0 -z-10 transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/65 to-black/25" />
+                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/95 via-black/45 to-black/15" />
 
                 <div
                   aria-hidden="true"

@@ -37,7 +37,7 @@ export default function MeetTheCoaches() {
               />
               {/* Heavier scrim than Choose Your Game — the credential list is
                   four lines of small text and needs a quieter ground. */}
-              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/75 to-black/20" />
+              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/95 via-black/50 to-black/10" />
 
               <div
                 aria-hidden="true"

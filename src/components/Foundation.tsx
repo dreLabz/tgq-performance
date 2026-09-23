@@ -43,7 +43,7 @@ export default function Foundation() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="absolute inset-0 -z-10 transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 -z-10 bg-black/60" />
+                <div className="absolute inset-0 -z-10 bg-black/40" />
 
                 <Icon name={pillar.icon} className="h-8 w-8 text-white" />
 

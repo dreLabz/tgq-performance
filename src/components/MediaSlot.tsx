@@ -21,7 +21,11 @@ export default function MediaSlot({
   priority,
 }: Props) {
   return (
-    <div className={`relative overflow-hidden bg-gray-900 ${className}`}>
+    // No `relative` here: callers pass `absolute inset-0`, and Tailwind
+    // emits .relative after .absolute, so a base `relative` silently wins
+    // and collapses this wrapper to zero height — which kills the fill image.
+    // Callers that do not position it must pass `relative` themselves.
+    <div className={`overflow-hidden bg-gray-900 ${className}`}>
       {media.src ? (
         <Image
           src={media.src}
